@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RAVI SINGH | Software Engineer</title>
-<p>Software Engineer | Finacle E-Banking Specialist | Core Java Developer</p>
+<p>Software Engineer | FEBA | Core Java Developer | DEH Begineer</p>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -296,8 +296,11 @@ section {
     <section>
         <h2 class="section-title">Skills</h2>
 
-     <div class="skills">
+ <div class="skills">
     <div class="skill">Core Java</div>
+    <div class="skill">Selenium Java automation</div>
+    <div class="skill">Manual testing</div>
+    <div class="skill">Database testing</div>
     <div class="skill">Servlets</div>
     <div class="skill">JSP</div>
     <div class="skill">Oracle SQL</div>
@@ -372,7 +375,7 @@ section {
 <p>
 Integrated NI Mastercard services into Finacle E-Banking platform.
 Worked on card lifecycle processes including card issuance,
-activation, validation, and transaction handling.
+activation, set pin, card limit, and card control handling.
 </p>
 
 </div>
@@ -453,7 +456,7 @@ Re-KYC workflows, validations, and regulatory checks.
 </div>
 
 <footer>
-	 <p>© 2026 Ravi Singh | Software Engineer Portfolio</p>
+	 <p>© 2026 Ravi Singh | Software Engineer</p>
 </footer>
 
 </body>
