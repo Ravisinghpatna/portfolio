@@ -142,6 +142,131 @@ footer{
 ul{
     padding-left:20px;
 }
+
+
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Subtle background upgrade */
+body {
+    background: linear-gradient(135deg, #f4f7fc, #e8f0ff);
+}
+
+/* Header glow + depth */
+header {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated subtle pattern */
+header::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 10%, transparent 10.01%);
+    background-size: 30px 30px;
+    transform: rotate(25deg);
+    animation: moveBg 20s linear infinite;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0,0) rotate(25deg); }
+    100% { transform: translate(50px,50px) rotate(25deg); }
+}
+
+/* Header text pop */
+header h1 {
+    letter-spacing: 1px;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* Button upgrade */
+.btn {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    box-shadow: 0 8px 20px rgba(56,189,248,0.3);
+    transform: translateY(0);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(56,189,248,0.5);
+}
+
+/* Section titles underline effect */
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+    border-radius: 10px;
+}
+
+/* Card hover animation */
+.card, .experience {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover, .experience:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* Skill chips upgrade */
+.skill {
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill:hover {
+    background: #0ea5e9;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Contact section polish */
+.contact p {
+    margin: 10px 0;
+}
+
+/* Footer glow */
+footer {
+    background: linear-gradient(135deg, #0f172a, #111827);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+/* Fade-in animation for sections */
+section {
+    animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 </style>
 </head>
 
@@ -185,21 +310,56 @@ ul{
     </section>
 
     <section>
-        <h2 class="section-title">Experience</h2>
+    <h2 class="section-title">Experience</h2>
 
-        <div class="experience">
-            <h3>Software Engineer</h3>
-            <p><strong>Modus Information Systems Pvt Ltd</strong> | 2023 - Present</p>
+    <div class="experience">
 
-            <ul>
-                <li>Developed REST APIs using Spring Boot.</li>
-                <li>Built scalable microservices architecture.</li>
-                <li>Implemented CI/CD pipelines using Jenkins.</li>
-                <li>Reduced API response time by 40%.</li>
-                <li>Worked in Agile Scrum teams.</li>
-            </ul>
-        </div>
-    </section>
+        <h3>Software Engineer</h3>
+        <p><strong>Modus Information Systems Pvt Ltd</strong> | Aug 2023 - Dec 2024</p>
+
+        <ul>
+            <li>Extensive experience in Canara Bank RRB’s project with FEBA Framework, Core Java, Servlets, and JSP.</li>
+            <li>Worked on L2 production support, customization, module development, UI enhancements, and live issue resolution.</li>
+            <li>Contributed to automation, batch scheduling, and internet banking production support.</li>
+            <li>Handled Oracle upgrades, new FEBA installations, and production environment support.</li>
+            <li>Worked on CKYC, AEPS, and Re-KYC modules in banking systems.</li>
+            <li>Experience in transaction batches, bulk salary transfer initiation, log analysis, server bounce, DAT file checks, and email issue troubleshooting.</li>
+            <li>Customized FEBA menus, FormGroups, FormManagement, VO, Service Requests in DAL (Data Access Layer) and TSPC.</li>
+        </ul>
+
+    </div>
+
+    <div class="experience">
+
+        <h3>Software Engineer</h3>
+        <p><strong>Infosys – Meethaq Oman Bank Project</strong> | Dec 2024 - Mar 2025</p>
+
+        <ul>
+            <li>Worked on FEBA customization and observation fixes to ensure smooth banking operations.</li>
+            <li>Developed UI enhancements to improve banking module performance and user experience.</li>
+            <li>Resolved system observations and production issues ensuring compliance and stability.</li>
+        </ul>
+
+    </div>
+
+    <div class="experience">
+
+        <h3>Software Engineer</h3>
+        <p><strong>Natsave Bank Project</strong> | Jul 2025 - Present</p>
+
+        <ul>
+            <li>Worked on NI Mastercard integration for end-to-end card lifecycle management.</li>
+            <li>Implemented card creation, activation, PIN setup, and client/account linking flows.</li>
+            <li>Integrated core banking system using FI calls to fetch customer and account data.</li>
+            <li>Validated core data before sending API requests to external systems.</li>
+            <li>Handled both personal and non-personal card creation workflows.</li>
+            <li>Managed API responses and ensured proper success/failure handling in the application.</li>
+            <li>Performed validations and resolved functional issues to ensure smooth card processing.</li>
+        </ul>
+
+    </div>
+
+</section>
 
     <section>
 <h2 class="section-title">Projects</h2>
