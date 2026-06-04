@@ -267,6 +267,30 @@ section {
         transform: translateY(0);
     }
 }
+
+.contact-form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ddd;
+    font-family:'Poppins';
+    outline:none;
+    transition:0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#38bdf8;
+    box-shadow:0 0 8px rgba(56,189,248,0.3);
+}
 </style>
 </head>
 
@@ -454,10 +478,48 @@ Re-KYC workflows, validations, and regulatory checks.
     </section>
 
 </div>
-
+<form class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="tel" name="phone" placeholder="Phone Number">
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+    <!-- Optional settings -->
+    <input type="hidden" name="_captcha" value="false">
+</form>
 <footer>
 	 <p>© 2026 Ravi Singh | Software Engineer</p>
 </footer>
 
 </body>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("c1Y3LGaeE0xW-CN8K"); 
+})();
+
+document.querySelector(".contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.send(
+        "service_yejy39b",
+        "template_3z41zd7",
+        {
+            name: this.name.value,
+            email: this.email.value,
+            phone: this.phone.value,
+            message: this.message.value
+        }
+    ).then(() => {
+        alert("Message sent successfully!");
+        this.reset();
+    }).catch((error) => {
+        console.log(error);
+        alert("Failed to send message");
+    });
+});
+</script>
+
 </html>
