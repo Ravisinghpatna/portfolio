@@ -493,12 +493,10 @@ Re-KYC workflows, validations, and regulatory checks.
 
 </body>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-(function(){
-    emailjs.init("c1Y3LGaeE0xW-CN8K"); 
-})();
+emailjs.init("4NfWDy_Fbk3EZ5pjq");
 
 document.querySelector(".contact-form").addEventListener("submit", function(e){
     e.preventDefault();
@@ -512,14 +510,17 @@ document.querySelector(".contact-form").addEventListener("submit", function(e){
             phone: this.phone.value,
             message: this.message.value
         }
-    ).then(() => {
+    )
+    .then(() => {
         alert("Message sent successfully!");
         this.reset();
-    }).catch((error) => {
-        console.log(error);
-        alert("Failed to send message");
-    });
+    })
+    .catch((error) => {
+    console.log("EMAILJS FULL ERROR:", error);
+    alert(JSON.stringify(error, null, 2));
 });
+});
+
 </script>
 
 </html>
