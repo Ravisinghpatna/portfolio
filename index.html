@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RAVI SINGH | Software Engineer</title>
-<p>Software Engineer | FEBA | Core Java Developer | DEH Begineer</p>
+
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -227,6 +227,9 @@ header h1 {
 .card:hover, .experience:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+	  background: #0ea5e9;
+    color: white;
+    transform: scale(1.05);
 }
 
 /* Skill chips upgrade */
@@ -299,6 +302,7 @@ section {
 <header>
     <h1>Ravi Singh</h1>
     <p>Software Engineer | 3 Years Experience</p>
+    <p>Software Engineer | FEBA | Core Java Developer | DEH Begineer</p>
 
     <a class="btn" href="Ravi_Singh.pdf" target="_blank">
         Download Resume
@@ -496,31 +500,34 @@ Re-KYC workflows, validations, and regulatory checks.
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-emailjs.init("4NfWDy_Fbk3EZ5pjq");
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelector(".contact-form").addEventListener("submit", function(e){
-    e.preventDefault();
+    emailjs.init({
+        publicKey: "4NfwDy_Fbk3EZ5pjq"
+    });
 
-    emailjs.send(
-        "service_yejy39b",
-        "template_3z41zd7",
-        {
+    document.querySelector(".contact-form").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        emailjs.send("service_yejy39b", "template_3z41zd7", {
             name: this.name.value,
             email: this.email.value,
             phone: this.phone.value,
             message: this.message.value
-        }
-    )
-    .then(() => {
-        alert("Message sent successfully!");
-        this.reset();
-    })
-    .catch((error) => {
-    console.log("EMAILJS FULL ERROR:", error);
-    alert(JSON.stringify(error, null, 2));
-});
-});
+        })
+        .then((response) => {
+            console.log("SUCCESS:", response);
+            alert("Message sent successfully!");
+            this.reset();
+        })
+        .catch((error) => {
+            console.error("FAILED:", error);
+            alert("Failed: " + (error.text || JSON.stringify(error)));
+        });
 
+    });
+
+});
 </script>
 
 </html>
