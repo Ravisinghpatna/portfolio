@@ -739,7 +739,7 @@
     <footer>
         <p>© 2026 Ravi Singh | Software Engineer</p>
     </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         // Dark mode toggle
         function toggleTheme() {
